@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>-ary Dictionary</title>
+        <script src="static/vendor/js/bootstrap.bundle.min.js"></script>
+        <script src="static/js/dictionary.js"></script>
+        <link rel="stylesheet" href="static/vendor/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/dictionary.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">-ary</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="dictionary.html">Dictionary</a>
+                        <a class="nav-link" href="pictionary.html">Pictionary</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <h1>Dictionary</h1>
+        <div class="container-fluid d-flex flex-column align-items-center justify-content-center">
+            <form class="row row-cols-sm-auto g-3 align-items-center justify-content-center">
+                <div class="col-2 define-text">
+                    Define
+                </div>
+                <div class="col">
+                    <input type="text" class="word-input form-control form-control-lg" id="word" placeholder="">
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary btn-lg" onclick="defineWord()">Submit</button>
+                </div>
+            </form>
+            <ul class="list-group list-group-flush"></ul>
+        </div>
+    </body>
+</html>

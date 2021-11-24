@@ -1,0 +1,30 @@
+html, body {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h1 {
+    margin: 20px;
+}
+
+.define-text, .list-group {
+    font-size: 1.25rem;
+}
+
+.container-fluid {
+    flex: 1 0 auto;
+}
+
+body > .container-fluid > * {
+    margin-bottom: 20px;
+}
+
+.list-group-item.undefined {
+    color: gray;
+}
+
+.list-group .alert {
+    margin: 0;
+}
