@@ -1,8 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>-ary Author</title>
+        <title>-ary Pictionary</title>
         <script src="static/vendor/js/bootstrap.bundle.min.js"></script>
+        <script src="static/js/pictionary.js"></script>
         <link rel="stylesheet" href="static/vendor/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/pictionary.css">
     </head>
@@ -21,7 +22,12 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid">
+        <h1>Pictionary</h1>
+        <div class="container-fluid d-flex">
+            <canvas id="drawing-canvas"></canvas>
+            <div class="tools-panel">
+                <button class="btn btn-primary" onclick="downloadCanvasImage()">Save As</button>
+            </div>
         </div>
     </body>
 </html>

@@ -1,0 +1,32 @@
+html, body {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    margin: 20px;
+}
+
+.container-fluid.d-flex {
+    flex: 1;
+    padding-bottom: 1.1rem;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+}
+
+#drawing-canvas {
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: crosshair;
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.tools-panel {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.55rem;
+}

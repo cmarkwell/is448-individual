@@ -50,7 +50,7 @@ const defineWord = () => {
     const word = wordInput.value || wordInput.placeholder;
 
     // Do some basic input validation
-    if (word === '') {
+    if (!word) {
         return;
     }
 
