@@ -21,6 +21,28 @@ body > .container-fluid > * {
     margin-bottom: 20px;
 }
 
+.list-group {
+    width: 75%;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.list-group-item p {
+    margin-bottom: 0;
+}
+
+.list-group-item:not(.delete-all) button {
+    margin-left: 15px;
+}
+
+.list-group-item.delete-all {
+    justify-content: flex-end;
+}
+
 .list-group-item.undefined {
     color: gray;
 }
