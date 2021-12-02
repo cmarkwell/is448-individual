@@ -1,0 +1,18 @@
+html, body {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container-fluid.main {
+    align-items: center;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 3rem;
+}

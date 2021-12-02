@@ -75,6 +75,10 @@ const onRowDelete = classWord => {
         dictionary.splice(i, 1);
         localStorage.setItem('dictionary', JSON.stringify(dictionary));
     }
+    if (dictionary.length === 0) {
+        const wordList = document.querySelector('.list-group');
+        wordList.innerHTML = '';
+    }
     listingElement.remove();
 };
 
