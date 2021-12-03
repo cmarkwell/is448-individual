@@ -18,8 +18,8 @@ h1 {
 }
 
 #drawing-canvas {
-    border: 1px solid black;
-    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 5px;
     cursor: crosshair;
     display: flex;
     flex: 1 1 auto;
@@ -29,4 +29,20 @@ h1 {
     display: flex;
     flex-direction: column;
     padding-left: 0.55rem;
+    width: 33%;
+}
+
+input[type="color"] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 3px;
+    width: 100%;
+}
+
+label.line-cap {
+    margin-bottom: 2px;
+}
+
+.inline-cap-options {
+    margin-bottom: 23px;
 }

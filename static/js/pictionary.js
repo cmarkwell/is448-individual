@@ -1,11 +1,35 @@
 // Adapted from Ricardo Cabello's GitHub gist: https://gist.github.com/mrdoob/718743
 
 const LINE_WIDTH = 6;
-const STROKE_STYLE = 'rgb(0, 0, 0)';
+const STROKE_STYLE = '#000000';
 
 let canvas;
 let context;
 const mouse = { x: 0, y: 0 };
+
+/**
+ * Set stroke width when the user 
+ * @param {object} event
+ */
+const setStrokeWidth = event => {
+    context.lineWidth = event.target.value;
+};
+
+/**
+ * Set stroke color when the user chooses from the input
+ * @param {object} event
+ */
+const setStrokeStyle = event => {
+    context.strokeStyle = event.target.value;
+};
+
+/**
+ * Set the line cap style when the user chooses a new radio option
+ * @param {object} event 
+ */
+const setLineCapStyle = event => {
+    context.lineCap = event.target.value;
+};
 
 /**
  * Set the last mouse position using an event object
@@ -68,18 +92,26 @@ const onCanvasMouseUp = () => {
 /**
  * resize handler for the browser window
  */
-const onWindowResize = () => {
+const setCanvasContextState = () => {
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
 
-    context.strokeStyle = STROKE_STYLE;
-    context.lineWidth = LINE_WIDTH;
+    context.lineWidth = document.querySelector('.stroke-width').value;
+    context.strokeStyle = document.querySelector('.stroke-style').value;
 };
 
 /**
  * Initialize our canvas and context values, do some configuration
  */
 const init = () => {
+    const strokeWidthInput = document.querySelector('.stroke-width');
+    const strokeStyleInput = document.querySelector('.stroke-style');
+    strokeWidthInput.addEventListener('change', setStrokeWidth, false);
+    strokeStyleInput.addEventListener('change', setStrokeStyle, false);
+    
+    const radios = document.querySelectorAll('input[type="radio"][name="lineCap"]');
+    radios.forEach(radio => radio.addEventListener('change', setLineCapStyle, false));
+
     canvas = document.querySelector('#drawing-canvas');
     context = canvas.getContext('2d');
 
@@ -87,8 +119,15 @@ const init = () => {
     canvas.addEventListener('mouseup', onCanvasMouseUp, false);
     canvas.addEventListener('mouseleave', onCanvasMouseUp, false);
     
-    onWindowResize();
-    window.addEventListener('resize', onWindowResize, false);
+    setCanvasContextState();
+    window.addEventListener('resize', setCanvasContextState, false);
+};
+
+/**
+ * As the function header describes...
+ */
+const clearCanvasImage = () => {
+    context.clearRect(0, 0, canvas.width, canvas.height);
 };
 
 /**
@@ -109,4 +148,4 @@ const downloadCanvasImage = () => {
 /**
  * Window load handler
  */
- window.addEventListener('load', init);
+window.addEventListener('load', init);
